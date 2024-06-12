@@ -25,7 +25,7 @@ if(montoDeVenta <= 500){
     descuento =montoDeVenta * 0.11
 }else if(montoDeVenta <=15000){
     descuento = montoDeVenta * 0.18
-}else{
+}else if(montoDeVenta >15000){
     descuento = montoDeVenta * 0.25
 }
 
@@ -36,8 +36,5 @@ let totalAPagar = montoDeVenta - descuento;
 console.log(`Monto de venta: ${montoDeVenta}`);
 console.log(`Descuento: ${descuento}`);
 console.log(`Monto a pagar: ${totalAPagar}`);
-
-
-
 
 
