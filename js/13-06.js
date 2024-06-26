@@ -95,16 +95,14 @@ if (nota >= 0 && nota <= 2) {
 
 let pedirUnNumero = parseFloat(prompt("Ingresar un número: "));
 
-
-if(isNaN(pedirNumero)){
-    console.log("Introduce un número valido")
-}else if( pedirNumero < 0 || pedirNumero > 10){
-    console.log("número erróneo")
+if (isNaN(pedirNumero)) {
+  console.log("Introduce un número valido");
+} else if (pedirNumero < 0 || pedirNumero > 10) {
+  console.log("número erróneo");
 }
 // Realiza un script que pida números hasta que se pulse “cancelar”. Si no es un número deberá indicarse con un «alert» y seguir pidiendo números. Al salir con “cancelar” deberá indicarse la suma total de los números introducidos.
 
 // El verdulero de la esquina necesita una aplicación donde según la fruta que ingrese le diga el precio por kilo
-
 
 // 1)- Realizar una página con un script que calcule el valor de la letra de un número de DNI (Documento nacional de identidad).
 // El algoritmo para calcular la letra del dni es el siguiente :
@@ -116,9 +114,99 @@ if(isNaN(pedirNumero)){
 // Ejemplo:
 // Input:  40773821
 // Output: ‘L’
+let dni = 0;
+let resto = 0;
+let letraDni = " ";
 
+while (true) {
+  dni = prompt("Ingrese un numero de dni(Sin puntos)");
+  if (
+    dni.indexOf(".") !== -1 ||
+    isNaN(dni) ||
+    dni.indexOf(" ") !== -1 ||
+    dni > 99999999 ||
+    dni <= 0
+  ) {
+    alert("Error debe ingresar un numero");
+  } else {
+    resto = +dni % 23;
 
-
+    switch (resto) {
+      case 0:
+        letraDni = "T";
+        break;
+      case 1:
+        letraDni = "R";
+        break;
+      case 2:
+        letraDni = "W";
+        break;
+      case 3:
+        letraDni = "A";
+        break;
+      case 4:
+        letraDni = "G";
+        break;
+      case 5:
+        letraDni = "M";
+        break;
+      case 6:
+        letraDni = "Y";
+        break;
+      case 7:
+        letraDni = "F";
+        break;
+      case 8:
+        letraDni = "P";
+        break;
+      case 9:
+        letraDni = "D";
+        break;
+      case 10:
+        letraDni = "X";
+        break;
+      case 11:
+        letraDni = "B";
+        break;
+      case 12:
+        letraDni = "N";
+        break;
+      case 13:
+        letraDni = "J";
+        break;
+      case 14:
+        letraDni = "Z";
+        break;
+      case 15:
+        letraDni = "S";
+        break;
+      case 16:
+        letraDni = "Q";
+        break;
+      case 17:
+        letraDni = "V";
+        break;
+      case 18:
+        letraDni = "H";
+        break;
+      case 19:
+        letraDni = "L";
+        break;
+      case 20:
+        letraDni = "C";
+        break;
+      case 21:
+        letraDni = "K";
+        break;
+      case 22:
+        letraDni = "E";
+        break;
+      default:
+        break;
+    }
+    alert(`La letra asignada al dni es${letraDni}`)
+  }
+}
 
 // 2)- Crea un script que escriba los números del 1 al 500, que indique cuáles son múltiplos de 4 y de 9 y que cada 5 líneas muestre una línea horizontal. Por ejemplo :
 // 1
