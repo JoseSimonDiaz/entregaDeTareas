@@ -55,12 +55,53 @@ if(isNaN(calificaciones)){
 
 // 3- Realiza un script que pida cadenas de texto  hasta que se pulse “cancelar”. Al salir con “cancelar” deben mostrarse todas las cadenas concatenadas con un guión -.
 // Nota: usar confirm() https://www.w3schools.com/jsref/met_win_confirm.asp
-
-
 // Dificultad:  🟢🟡
-// 4- Realiza un script que pida números hasta que se pulse “cancelar”. Si no es un número deberá indicarse con un «alert» y seguir pidiendo números. Al salir con “cancelar” deberá indicarse la suma total de los números introducidos.
 
+let cadenaDeTexto = []
+
+while(true){
+  let pedirDatos = prompt("Di alguna frace")
+
+  if(pedirDatos === null){
+    break;
+  }
+
+  if(pedirDatos.toLocaleLowerCase() ==="cancelar"){
+    break;
+  }
+  cadenaDeTexto.push(pedirDatos)
+}
+
+let unirArray = cadenaDeTexto.join("-")
+
+console.log(`los textos ingresados son: ${unirArray}`);
+// 4- Realiza un script que pida números hasta que se pulse “cancelar”. Si no es un número deberá indicarse con un «alert» y seguir pidiendo números. Al salir con “cancelar” deberá indicarse la suma total de los números introducidos.
 // Dificultad:  🟢🟡🔴
+
+let sumaTotal = 0;
+
+while (true) {
+    let datosDeEntrada = prompt("Di un número");
+
+    if (datosDeEntrada === null) {
+        break;
+    }
+
+    let numero = parseFloat(datosDeEntrada);
+
+    if (isNaN(numero)) {
+        alert("Ingresa un número válido");
+    } else {
+        sumaTotal += numero;
+    }
+}
+
+alert(`La suma total de los números ingresados es: ${sumaTotal}`);
+
+for (let i = 1; i <= 5; i++) {
+  console.log("HOla:D");
+}
+
 // 5- Realizar una página con un script que calcule el valor de la letra de un número de DNI (Documento nacional de identidad).
 // El algoritmo para calcular la letra del dni es el siguiente :
 // El número debe ser entre 0 y 99999999
