@@ -33,7 +33,7 @@ let calificaciones = parseInt(prompt("Ingresa su calificacion:"))
 
 if(isNaN(calificaciones)){
    console.warn("Ingresa un numero valido")
-}else if(calificaciones >=11){
+}else if(calificaciones > 10){
    console.warn("Numero erroneo, ingresa un numero del 1 al 10")
 }else{
    if (console.log >= 0 && calificaciones <= 2) {
@@ -54,7 +54,6 @@ if(isNaN(calificaciones)){
 
 
 // 3- Realiza un script que pida cadenas de texto  hasta que se pulse “cancelar”. Al salir con “cancelar” deben mostrarse todas las cadenas concatenadas con un guión -.
-
 // Nota: usar confirm() https://www.w3schools.com/jsref/met_win_confirm.asp
 
 

@@ -6,8 +6,8 @@
 //Proceso: De los numeros pedidos, calcular cual es el numero mayor
 //Datos de salida: el numero mayor
 
-let numero1 = parseFloat(prompt("Escribir el primer número:"));
-let numero2 = parseFloat(prompt("Escribir el segundo número:"));
+let numero1 = parseFloat(prompt("Escribir el primer número(1-2):"));
+let numero2 = parseFloat(prompt("Escribir el segundo número(2-2):"));
 let numeroMayor = "";
 
 if (isNaN(numero1) && isNaN(numero2)) {
@@ -101,8 +101,54 @@ if (isNaN(pedirNumero)) {
   console.log("número erróneo");
 }
 // Realiza un script que pida números hasta que se pulse “cancelar”. Si no es un número deberá indicarse con un «alert» y seguir pidiendo números. Al salir con “cancelar” deberá indicarse la suma total de los números introducidos.
+let sum = 0;
+
+while (true) {
+    let input = prompt("INGRESA UN NUMERO:");
+
+    if (input === null) {  // El usuario ha pulsado "Cancelar"
+        break;
+    }
+
+    let number = parseFloat(input);
+
+    if (isNaN(number)) {
+        alert("Por favor, introduce un número válido.");
+    } else {
+        sum += number;
+    }
+}
+
+alert(`La suma total de los números ingresados es: ${sum}`);
 
 // El verdulero de la esquina necesita una aplicación donde según la fruta que ingrese le diga el precio por kilo
+const precioFrutas = {
+  uvas: 30,
+  manzana: 10,
+  banana: 5,
+  sandia: 15,
+  pera: 8,
+  mandarina: 9,
+  naranja: 9
+};
+
+while (true) {
+  let fruta = prompt("¿Qué fruta quiere llevar?");
+
+  if (fruta === null) {  
+    break;
+  }
+
+  fruta = fruta.toLowerCase();
+
+  if (precioFrutas[fruta] !== undefined) {
+    alert(`El precio por kilo de ${fruta} es de$${precioFrutas[fruta]}`);
+  } else {
+    alert("No nos queda de momento");
+  }
+}
+
+
 
 // 1)- Realizar una página con un script que calcule el valor de la letra de un número de DNI (Documento nacional de identidad).
 // El algoritmo para calcular la letra del dni es el siguiente :
@@ -114,99 +160,27 @@ if (isNaN(pedirNumero)) {
 // Ejemplo:
 // Input:  40773821
 // Output: ‘L’
-let dni = 0;
-let resto = 0;
-let letraDni = " ";
+
+let letrasDNI = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'];
 
 while (true) {
-  dni = prompt("Ingrese un numero de dni(Sin puntos)");
-  if (
-    dni.indexOf(".") !== -1 ||
-    isNaN(dni) ||
-    dni.indexOf(" ") !== -1 ||
-    dni > 99999999 ||
-    dni <= 0
-  ) {
-    alert("Error debe ingresar un numero");
-  } else {
-    resto = +dni % 23;
+    let pedirDNI = prompt("Introduce un número de DNI (entre 0 y 99999999):");
 
-    switch (resto) {
-      case 0:
-        letraDni = "T";
-        break;
-      case 1:
-        letraDni = "R";
-        break;
-      case 2:
-        letraDni = "W";
-        break;
-      case 3:
-        letraDni = "A";
-        break;
-      case 4:
-        letraDni = "G";
-        break;
-      case 5:
-        letraDni = "M";
-        break;
-      case 6:
-        letraDni = "Y";
-        break;
-      case 7:
-        letraDni = "F";
-        break;
-      case 8:
-        letraDni = "P";
-        break;
-      case 9:
-        letraDni = "D";
-        break;
-      case 10:
-        letraDni = "X";
-        break;
-      case 11:
-        letraDni = "B";
-        break;
-      case 12:
-        letraDni = "N";
-        break;
-      case 13:
-        letraDni = "J";
-        break;
-      case 14:
-        letraDni = "Z";
-        break;
-      case 15:
-        letraDni = "S";
-        break;
-      case 16:
-        letraDni = "Q";
-        break;
-      case 17:
-        letraDni = "V";
-        break;
-      case 18:
-        letraDni = "H";
-        break;
-      case 19:
-        letraDni = "L";
-        break;
-      case 20:
-        letraDni = "C";
-        break;
-      case 21:
-        letraDni = "K";
-        break;
-      case 22:
-        letraDni = "E";
-        break;
-      default:
+    if (pedirDNI === null) {
         break;
     }
-    alert(`La letra asignada al dni es${letraDni}`)
-  }
+    
+    let DNI = parseInt(pedirDNI);
+
+    if (isNaN(DNI) || DNI < 0 || DNI > 99999999) {
+        alert("Introduce un valor de DNI válido.");
+    } else {
+        let resto = DNI % 23;
+        let letra = letrasDNI[resto];
+        alert(`El número de DNI ${DNI} corresponde a la letra ${letra}.`);
+    }
 }
+
 
 // 2)- Crea un script que escriba los números del 1 al 500, que indique cuáles son múltiplos de 4 y de 9 y que cada 5 líneas muestre una línea horizontal. Por ejemplo :
 // 1
@@ -220,3 +194,18 @@ while (true) {
 // 8 (Múltiplo de 4)
 // 9 (Múltiplo de 9)
 // 10
+for(let i = 1; i<= 500; i++){
+    let valor = `${i}`
+
+   let multiploDe4 = i % 4 === 0;
+   let multiploDe9 = i % 9 === 0;
+
+if(multiploDe4){
+     valor += `- Es multiplo de 4`
+}else if(multiploDe9){
+     valor += `- Es multiplo de 9`
+}
+
+console.log(valor);
+
+}

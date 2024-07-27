@@ -75,52 +75,52 @@
 // Output: oauo
 
 
-let pedirFrace = prompt("Escribe una frace")
+// let pedirFrace = prompt("Escribe una frace")
 
-const VOCALES = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U', 'á', 'é', 'í', 'ó', 'ú', 'Á', 'É', 'Í', 'Ó', 'Ú']
+// const VOCALES = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U', 'á', 'é', 'í', 'ó', 'ú', 'Á', 'É', 'Í', 'Ó', 'Ú']
 
-let vocalesEncontradas = []
+// let vocalesEncontradas = []
 
-for(let i = 0; i < pedirFrace.length; i++){
-   let frace = pedirFrace.charAt(i)
-   if(VOCALES.includes(frace)){
-    vocalesEncontradas.push(frace)
-   }
-}
+// for(let i = 0; i < pedirFrace.length; i++){
+//    let frace = pedirFrace.charAt(i)
+//    if(VOCALES.includes(frace)){
+//     vocalesEncontradas.push(frace)
+//    }
+// }
 
-console.log(`Las vocales encontradas son: ${vocalesEncontradas.join(' ')}`)
-
-
-// 10.- Escribe un programa que pida un número y nos diga si es divisible por 2, 3, 5 o 7 (sólo hay que comprobar si lo es por uno de los cuatro)
-// Ejemplo: 
-// input: 20
-// Output: El 20 es divisible por 2.
-// Dificultad:  🟢🟡
-
-let numeroDivisible = parseInt(prompt("Pedir un numero"))
-let divisibles = [];
-
-if(!isNaN(numeroDivisible)){
-if(numeroDivisible % 2 === 0){
-  console.log(`El ${numeroDivisible} es divisible por 2`)
+// console.log(`Las vocales encontradas son: ${vocalesEncontradas.join(' ')}`)
 
 
-}else if(numeroDivisible % 3 === 0){
-  console.log(`El ${numeroDivisible} es divisible por 3`)
+// // 10.- Escribe un programa que pida un número y nos diga si es divisible por 2, 3, 5 o 7 (sólo hay que comprobar si lo es por uno de los cuatro)
+// // Ejemplo: 
+// // input: 20
+// // Output: El 20 es divisible por 2.
+// // Dificultad:  🟢🟡
+
+// let numeroDivisible = parseInt(prompt("Pedir un numero"))
+// let divisibles = [];
+
+// if(!isNaN(numeroDivisible)){
+// if(numeroDivisible % 2 === 0){
+//   console.log(`El ${numeroDivisible} es divisible por 2`)
 
 
-}else if(numeroDivisible % 5 === 0){
-   console.log(`El ${numeroDivisible} es divisible por 5`)
+// }else if(numeroDivisible % 3 === 0){
+//   console.log(`El ${numeroDivisible} es divisible por 3`)
 
 
- }else if(numeroDivisible % 7 === 0){
-   console.log(`El ${numeroDivisible} es divisible por 7`)
+// }else if(numeroDivisible % 5 === 0){
+//    console.log(`El ${numeroDivisible} es divisible por 5`)
 
 
- }
-}else{
-   console.warn("no ingresaste un numero")
-}
+//  }else if(numeroDivisible % 7 === 0){
+//    console.log(`El ${numeroDivisible} es divisible por 7`)
+
+
+//  }
+// }else{
+//    console.warn("no ingresaste un numero")
+// }
 
 // 11.- Añadir al ejercicio anterior que nos diga por cuál de los cuatro es divisible (hay que decir todos por los que es divisible)
 // Ejemplo: 
@@ -129,4 +129,13 @@ if(numeroDivisible % 2 === 0){
 // Output: El 20 es divisible por 2 y por 5.
 // Output: El 210 es divisible por 2, por 3, por 5 y por 7.
 
+let persona = 13
+let tutor = true
 
+if(persona >= 18){
+  console.log("Podes pasar mmi rai");
+}else if(tutor){
+       console.log("Sos menor, pero como venis con un tutor podes pasar");
+}else{
+  console.log("NO podes pasar mi ray");
+}
